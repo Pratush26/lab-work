@@ -21,3 +21,7 @@ int main() {
     }
     return 0;
 }
+// Sample input
+// 5
+// 4 2 1 5 3
+// 2
