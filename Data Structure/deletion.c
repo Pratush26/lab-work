@@ -5,6 +5,8 @@ int main() {
     scanf("%d", &n);
     int arr[n];
     for (int i = 0; i < n; i++) scanf("%d", &arr[i]);
+    
+    printf("Enter index for deleting: ");
     scanf("%d", &k);
     n--;
     int i = k;
