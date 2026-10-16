@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void countingSort(int arr[], int sortedArr[], int n, int mx)
+void countingSort(int arr[], int result[], int n, int mx)
 {
     int frq[mx + 1];
 
@@ -11,7 +11,7 @@ void countingSort(int arr[], int sortedArr[], int n, int mx)
     for (int i = 1; i <= mx; i++) frq[i] += frq[i - 1];
 
     for (int i = n - 1; i >= 0; i--) {
-        sortedArr[frq[arr[i]] - 1] = arr[i];
+        result[frq[arr[i]] - 1] = arr[i];
         frq[arr[i]]--;
     }
 }
@@ -22,7 +22,7 @@ int main()
     printf("Enter array size: ");
     scanf("%d", &n);
 
-    int arr[n], sortedArr[n];
+    int arr[n], result[n];
     printf("Enter array elements: ");
 
     scanf("%d", &arr[0]);
@@ -33,10 +33,10 @@ int main()
         if(arr[i] > mx) mx = arr[i];
     }
     
-    countingSort(arr, sortedArr, n, mx);
+    countingSort(arr, result, n, mx);
     
     printf("Sorted Array:\n");
-    for (int i = 0; i < n; i++) printf("%d ", sortedArr[i]);
+    for (int i = 0; i < n; i++) printf("%d ", result[i]);
 
     return 0;
 }
