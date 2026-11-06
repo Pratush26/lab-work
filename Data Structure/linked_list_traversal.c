@@ -14,18 +14,11 @@ void linkedListTraversal(struct node *ptr) {
 }
 
 int main() {
-    struct node *head;
-    struct node *second;
-    struct node *third;
-    struct node *fourth;
-    struct node *fifth;
-
-    // Allocate memory for nodes in the linked list in Heap
-    head = (struct node *)malloc(sizeof(struct node));
-    second = (struct node *)malloc(sizeof(struct node));
-    third = (struct node *)malloc(sizeof(struct node));
-    fourth = (struct node *)malloc(sizeof(struct node));
-    fifth = (struct node *)malloc(sizeof(struct node));
+    struct node *head = malloc(sizeof(struct node));
+    struct node *second = malloc(sizeof(struct node));
+    struct node *third = malloc(sizeof(struct node));
+    struct node *fourth = malloc(sizeof(struct node));
+    struct node *fifth = malloc(sizeof(struct node));
 
     head->data = 10;
     head->next = second;
@@ -41,7 +34,8 @@ int main() {
 
     fifth->data = 50;
     fifth->next = NULL;
-
+    
+    printf("Linked list elements: \n");
     linkedListTraversal(head);
     return 0;
 }

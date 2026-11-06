@@ -6,11 +6,10 @@ struct node {
     struct node *link;
 };
 int main() {
-    struct node *head=NULL;
     int num;
     printf("Enter a value to add in linked list: ");
     scanf("%d", &num);
-    head=(struct node*)malloc(sizeof(struct node));
+    struct node *head = malloc(sizeof(struct node));
     head->data=num;
     head->link=NULL;
     printf("data %d; next %d", head->data, head->link ? head->link->data : 0);
