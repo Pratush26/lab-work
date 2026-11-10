@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <string.h>
 #define MAX 100
@@ -47,23 +46,17 @@ int main() {
     m = strlen(X);
     n = strlen(Y);
 
-    // Shift strings right by 1 index to align with 1-based indexing in slides
     char X_shifted[MAX] = " ";
     char Y_shifted[MAX] = " ";
     strcat(X_shifted, X);
     strcat(Y_shifted, Y);
 
+    lcs_length(X_shifted, Y_shifted);
+    
     printf("Sequence X: %s\n", X);
     printf("Sequence Y: %s\n\n", Y);
-
-    // Step 1: Run LCS-Length to populate the matrices
-    lcs_length(X_shifted, Y_shifted);
-
-    // Step 2: Output the results
     printf("Length of LCS: %d\n", c[m][n]);
     printf("Longest Common Subsequence: ");
     print_lcs(X_shifted, m, n);
-    printf("\n");
-
     return 0;
 }
